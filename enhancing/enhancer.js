@@ -17,9 +17,9 @@ function fail(item) {
     item.durability -= 5
   }else if(item.enhancement >= 15){
     item.durability -= 10
-  }else if(item.enhancement > 16){
-    item.enhancement -= 1
-  }
+    if(item.enhancement > 16){
+      item.enhancement -= 1
+    }}
   return { ...item };
 }
 
@@ -29,9 +29,9 @@ function repair(item) {
 }
 
 function get(item) {
-  // if(item.enhancement > 0){
-  //   item.name = `[+${item.enhancement}] ${item.name}`
-  // }
+  if(item.enhancement > 0){
+    item.name = `[+${item.enhancement}] ${item.name}`
+  }
 
 
   return { ...item };
